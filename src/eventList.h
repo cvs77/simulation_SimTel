@@ -1,0 +1,30 @@
+#pragma once
+#include <algorithm>
+#include <vector>
+#include "stdio.h"
+#define CALL_BEGIN 1
+#define CALL_END 0
+#define CALL_DRIVEIN 2
+#define CALL_DRIVEOUT 3
+#define CAR_ATOB 0
+#define CAR_BTOA 1
+
+using namespace std;
+
+struct  node{
+	double time;
+	int event_location;
+	double event_initial_point;
+	int evenType;
+	
+	int car_direction;
+	double car_speed;
+	double call_duration;
+};
+
+int sortTime(const struct node p1,const struct node p2);
+void addAEvent(double nextTime,int evenType,int event_location);
+void addAArrivalEvent(double nectTime       ,int eventType, int event_locaiton,double event_initial_point,int car_directon,double car_speed,double call_duration);
+struct node popAEvent(void);
+void   clear_list(void);
+
